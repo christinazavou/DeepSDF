@@ -15,7 +15,7 @@ echo "SOURCE_DIR: ${SOURCE_DIR}"
 echo "PY_EXE: ${PY_EXE}"
 
 export CUDA_VISIBLE_DEVICES="0,1,2"
-export PANGOLIN_WINDOW_URI=headless://
+#export PANGOLIN_WINDOW_URI=headless://
 if [ -d "/home/czavou01" ]
   then
     echo "module load Xvfb/1.20.9-GCCcore-10.2.0"
