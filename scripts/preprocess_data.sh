@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+PY_EXE=${PY_EXE:-/home/czavou01/miniconda3/envs/deepsdf/bin/python}
 SOURCE_DIR=${SOURCE_DIR:-/home/czavou01/DeepSDF/}
 DATA_DIR=${DATA_DIR:-/home/czavou01/deepsdf-logs/data/}
 SOURCE_DATA=${SOURCE_DATA:-/home/czavou01/ShapeNetCore.v1}
@@ -19,4 +20,4 @@ elif [[ "$TEST" == 1 ]]; then
 else
   args="$args --split examples/splits/sv2_chairs_test.json --log /home/czavou01/deepsdf-logs/preprocess_test_surface.log --surface"
 
-cd ${SOURCE_DIR} && python preprocess_data.py $args
+cd ${SOURCE_DIR} && ${PY_EXE} preprocess_data.py $args
