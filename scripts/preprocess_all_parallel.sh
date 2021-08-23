@@ -23,7 +23,6 @@ preprocess_train_sdf(){
     && export DATA_DIR=${DATA_DIR} \
     && export SOURCE_DATA=${SOURCE_DATA} \
     && export TEST=0 \
-    && export CUDA_VISIBLE_DEVICES="0" \
     && sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 preprocess_test_sdf(){
@@ -34,7 +33,6 @@ preprocess_test_sdf(){
     && export DATA_DIR=${DATA_DIR} \
     && export SOURCE_DATA=${SOURCE_DATA} \
     && export TEST=1 \
-    && export CUDA_VISIBLE_DEVICES="1" \
     && sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 preprocess_test_surface(){
@@ -45,7 +43,6 @@ preprocess_test_surface(){
     && export DATA_DIR=${DATA_DIR} \
     && export SOURCE_DATA=${SOURCE_DATA} \
     && export TEST=2 \
-    && export CUDA_VISIBLE_DEVICES="2" \
     && sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 
