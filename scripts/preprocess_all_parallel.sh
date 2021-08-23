@@ -19,31 +19,31 @@ preprocess_train_sdf(){
   echo "preprocess_train_sdf"
   out_file=preprocess_train_sdf.out
   err_file=preprocess_train_sdf.err
-  export SOURCE_DIR=${SOURCE_DIR} \
-    && export DATA_DIR=${DATA_DIR} \
-    && export SOURCE_DATA=${SOURCE_DATA} \
-    && export TEST=0 \
-    && sh ./preprocess_data.sh > $out_file 2>$err_file
+  export SOURCE_DIR=${SOURCE_DIR}
+  export DATA_DIR=${DATA_DIR}
+  export SOURCE_DATA=${SOURCE_DATA}
+  export TEST=0
+  sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 preprocess_test_sdf(){
   echo "preprocess_test_sdf"
   out_file=preprocess_test_sdf.out
   err_file=preprocess_test_sdf.err
-  export SOURCE_DIR=${SOURCE_DIR} \
-    && export DATA_DIR=${DATA_DIR} \
-    && export SOURCE_DATA=${SOURCE_DATA} \
-    && export TEST=1 \
-    && sh ./preprocess_data.sh > $out_file 2>$err_file
+  export SOURCE_DIR=${SOURCE_DIR}
+  export DATA_DIR=${DATA_DIR}
+  export SOURCE_DATA=${SOURCE_DATA}
+  export TEST=1
+  sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 preprocess_test_surface(){
   echo "preprocess_test_surface"
   out_file=preprocess_test_surface.out
   err_file=preprocess_test_surface.err
-  export SOURCE_DIR=${SOURCE_DIR} \
-    && export DATA_DIR=${DATA_DIR} \
-    && export SOURCE_DATA=${SOURCE_DATA} \
-    && export TEST=2 \
-    && sh ./preprocess_data.sh > $out_file 2>$err_file
+  export SOURCE_DIR=${SOURCE_DIR}
+  export DATA_DIR=${DATA_DIR}
+  export SOURCE_DATA=${SOURCE_DATA}
+  export TEST=2
+  sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 
 processes=()
