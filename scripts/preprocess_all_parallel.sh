@@ -16,7 +16,7 @@ echo "PY_EXE: ${PY_EXE}"
 export CUDA_VISIBLE_DEVICES="0,1,2"
 
 preprocess_train_sdf(){
-  exho "preprocess_train_sdf"
+  echo "preprocess_train_sdf"
   out_file=preprocess_train_sdf.out
   err_file=preprocess_train_sdf.err
   export SOURCE_DIR=${SOURCE_DIR} \
