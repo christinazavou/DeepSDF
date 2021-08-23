@@ -6,6 +6,9 @@ DATA_DIR=${DATA_DIR:-/home/czavou01/deepsdf-logs/data/}
 SOURCE_DATA=${SOURCE_DATA:-/home/czavou01/ShapeNetCore.v1}
 TEST=${TEST:-0}
 
+mkdir -p /home/czavou01/deepsdf-logs/
+mkdir -p ${DATA_DIR}
+
 args=""
 args="$args --data_dir ${DATA_DIR}"
 args="$args --source ${SOURCE_DATA}"

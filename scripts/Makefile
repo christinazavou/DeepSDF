@@ -6,6 +6,8 @@ conda-turing1:
 	conda create -n deepsdf python=3.6
 	conda activate deepsdf
 	conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
+	conda install scikit-image
+	conda install -c conda-forge trimesh
 
 install-dependencies-turing1:
 	git clone --recursive https://github.com/christinazavou/DeepSDF.git
