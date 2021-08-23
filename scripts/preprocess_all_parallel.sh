@@ -14,6 +14,7 @@ echo "SOURCE_DIR: ${SOURCE_DIR}"
 echo "PY_EXE: ${PY_EXE}"
 
 export CUDA_VISIBLE_DEVICES="0,1,2"
+export PANGOLIN_WINDOW_URI=headless://
 
 preprocess_train_sdf(){
   echo "preprocess_train_sdf"
