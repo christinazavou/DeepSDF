@@ -20,4 +20,5 @@ elif [[ "$TEST" == 1 ]]; then
 else
   args="$args --split examples/splits/sv2_chairs_test.json --log /home/czavou01/deepsdf-logs/preprocess_test_surface.log --surface"
 
+echo "cd ${SOURCE_DIR} && ${PY_EXE} preprocess_data.py $args"
 cd ${SOURCE_DIR} && ${PY_EXE} preprocess_data.py $args
