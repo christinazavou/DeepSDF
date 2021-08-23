@@ -1,4 +1,3 @@
-#!/bin/bash
 
 
 PY_EXE=${PY_EXE:-/home/czavou01/miniconda3/envs/deepsdf/bin/python}
