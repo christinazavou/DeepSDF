@@ -30,6 +30,7 @@ if [ -d "/home/czavou01" ]
     Xvfb :${DISPLAY} &
     echo "export DISPLAY=:${DISPLAY}"
     export DISPLAY=:${DISPLAY}
+    export MESA_GL_VERSION_OVERRIDE=3.3
   fi
 
 preprocess_train_sdf(){
