@@ -48,12 +48,17 @@ preprocess_test_surface(){
 }
 
 processes=()
+
 preprocess_train_sdf &
 current_process=$!
 processes+=("$current_process")
+wait 60  # because same locations are used in subsequent calls
+
 preprocess_test_sdf &
 current_process=$!
 processes+=("$current_process")
+
+wait 60  # because same locations are used in subsequent calls
 preprocess_test_surface &
 current_process=$!
 processes+=("$current_process")
