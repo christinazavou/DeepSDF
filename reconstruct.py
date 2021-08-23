@@ -63,7 +63,7 @@ def reconstruct(
 
         latent_inputs = latent.expand(num_samples, -1)
 
-        inputs = torch.cat([latent_inputs, xyz], 1).cuda()
+        inputs = torch.cat([latent_inputs, xyz], 1).cuda()  # note that xyz.requires_grad is False
 
         pred_sdf = decoder(inputs)
 

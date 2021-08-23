@@ -28,9 +28,9 @@ def create_mesh(
 
     # transform first 3 columns
     # to be the x, y, z index
-    samples[:, 2] = overall_index % N
-    samples[:, 1] = (overall_index.long() / N) % N
-    samples[:, 0] = ((overall_index.long() / N) / N) % N
+    samples[:, 2] = torch.remainder(overall_index, N)
+    samples[:, 1] = torch.remainder(torch.true_divide(overall_index.long(), N), N)
+    samples[:, 0] = torch.remainder(torch.true_divide(torch.true_divide(overall_index.long(), N), N), N)
 
     # transform first 3 columns
     # to be the x, y, z coordinate
@@ -53,7 +53,7 @@ def create_mesh(
             .detach()
             .cpu()
         )
-        head += max_batch
+        head += max_batch   # why predicting subset (patch)? why selecting patch size as 2**18 ?
 
     sdf_values = samples[:, 3]
     sdf_values = sdf_values.reshape(N, N, N)

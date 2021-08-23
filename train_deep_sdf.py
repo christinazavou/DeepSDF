@@ -466,7 +466,10 @@ def main_function(experiment_directory, continue_from, batch_split):
 
             num_sdf_samples = sdf_data.shape[0]
 
-            sdf_data.requires_grad = False
+            sdf_data.requires_grad = False  # probably because this is appended to latent (embedding layer) which
+            # needs gradient ...
+            # "Usually you don’t need gradients in your input. However, gradients in the input might be needed for some
+            # special use cases e.g. creating adversarial samples."
 
             xyz = sdf_data[:, 0:3]
             sdf_gt = sdf_data[:, 3].unsqueeze(1)
