@@ -15,6 +15,21 @@ echo "PY_EXE: ${PY_EXE}"
 
 export CUDA_VISIBLE_DEVICES="0,1,2"
 export PANGOLIN_WINDOW_URI=headless://
+if [ -d "/home/czavou01" ]
+  then
+    echo "module load Xvfb/1.20.9-GCCcore-10.2.0"
+    module load Xvfb/1.20.9-GCCcore-10.2.0
+    echo "module load libGLU/9.0.1-GCCcore-10.2.0"
+    module load libGLU/9.0.1-GCCcore-10.2.0
+    echo "module load Mesa/20.2.1-GCCcore-10.2.0"
+    module load Mesa/20.2.1-GCCcore-10.2.0
+    echo "module glew/2.1.0-GCCcore-10.2.0"
+    module load glew/2.1.0-GCCcore-10.2.0
+    echo "Xvfb :${DISPLAY} &"
+    Xvfb :${DISPLAY} &
+    echo "export DISPLAY=:${DISPLAY}"
+    export DISPLAY=:${DISPLAY}
+  fi
 
 preprocess_train_sdf(){
   echo "preprocess_train_sdf"
