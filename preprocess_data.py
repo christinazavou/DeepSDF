@@ -179,8 +179,7 @@ if __name__ == "__main__":
         + dest_dir
     )
 
-    if not os.path.isdir(dest_dir):
-        os.makedirs(dest_dir)
+    os.makedirs(dest_dir, exist_ok=True)
 
     if args.surface_sampling:
         normalization_param_dir = os.path.join(

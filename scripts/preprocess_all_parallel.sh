@@ -9,6 +9,7 @@ DATA_DIR=${DATA_DIR:-/home/czavou01/deepsdf-logs/data/}
 SOURCE_DATA=${SOURCE_DATA:-/home/czavou01/ShapeNetCore.v1}
 
 PY_EXE=${PY_EXE:-/home/czavou01/miniconda3/envs/deepsdf/bin/python}
+DISPLAY=${DISPLAY:-50}
 
 echo "SOURCE_DIR: ${SOURCE_DIR}"
 echo "PY_EXE: ${PY_EXE}"
