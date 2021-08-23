@@ -1,5 +1,4 @@
 PARTITION ?= GPU
-EXCLUDE_ARGS ?= "-x gpu-0-[1,2]"
 
 THIS_DIR ?= /home/czavou01/DeepSDF
 
@@ -8,7 +7,7 @@ conda-turing1:
 	conda activate deepsdf
 	conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
 
-install-turing1:
+install-dependencies-turing1:
 	git clone --recursive https://github.com/christinazavou/DeepSDF.git
 	git checkout -b experimental
 	git pull origin experimental
@@ -22,17 +21,15 @@ install-turing1:
 	module add glew/2.1.0-GCCcore-10.2.0
 	mkdir $(THIS_DIR)/third-party/Pangolin/build && cd $(THIS_DIR)/third-party/Pangolin/build && cmake .. && make
 	mkdir $(THIS_DIR)/third-party/include
-	mkdir $(THIS_DIR)/third-party/include/CLI11 && cp $(THIS_DIR)/third-party/CLI11-2.0.0/include/CLI/* include/CLI11/
+	cp -r $(THIS_DIR)/third-party/CLI11-2.0.0/include/* include/
 	mkdir $(THIS_DIR)/third-party/include/nanoflann && cp $(THIS_DIR)/third-party/nanoflann/include/* $(THIS_DIR)/third-party/include/nanoflann/
 	cp -r $(THIS_DIR)/third-party/eigen-3.4.0/Eigen/ include/
+
+install-turing1:
+	cd $(THIS_DIR) && mkdir build && cd build && cmake .. && make -j
 
 #or:
 #module add Eigen/3.3.7-GCCcore-9.3.0
 
-preprocess-train-data-turing1:
-	export TEST=0 \
-		&& sbatch --partition=$PARTITION $EXCLUDE_ARGS
-
-preprocess-test-data-turing1:
-	export TEST=1 \
-		&& sbatch --partition=$PARTITION $EXCLUDE_ARGS
+preprocess-all-parallel-turing1:
+	sbatch --partition=$PARTITION preprocess_all_parallel.sh

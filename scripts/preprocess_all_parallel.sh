@@ -16,6 +16,7 @@ echo "PY_EXE: ${PY_EXE}"
 export CUDA_VISIBLE_DEVICES="0,1,2"
 
 preprocess_train_sdf(){
+  exho "preprocess_train_sdf"
   out_file=preprocess_train_sdf.out
   err_file=preprocess_train_sdf.err
   export SOURCE_DIR=${SOURCE_DIR} \
@@ -26,6 +27,7 @@ preprocess_train_sdf(){
     && sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 preprocess_test_sdf(){
+  echo "preprocess_test_sdf"
   out_file=preprocess_test_sdf.out
   err_file=preprocess_test_sdf.err
   export SOURCE_DIR=${SOURCE_DIR} \
@@ -36,6 +38,7 @@ preprocess_test_sdf(){
     && sh ./preprocess_data.sh > $out_file 2>$err_file
 }
 preprocess_test_surface(){
+  echo "preprocess_test_surface"
   out_file=preprocess_test_surface.out
   err_file=preprocess_test_surface.err
   export SOURCE_DIR=${SOURCE_DIR} \
