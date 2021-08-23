@@ -1,4 +1,4 @@
-PARTITION ?= GPU
+SPECIFIC_NODE_ARG ?= "-w gpu-0-0"
 
 THIS_DIR ?= /home/czavou01/DeepSDF
 
@@ -32,4 +32,4 @@ install-turing1:
 #module add Eigen/3.3.7-GCCcore-9.3.0
 
 preprocess-all-parallel-turing1:
-	sbatch --partition=$PARTITION preprocess_all_parallel.sh
+	sbatch --job-name=prepsdf $SPECIFIC_NODE_ARG preprocess_all_parallel.sh
